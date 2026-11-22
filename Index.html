@@ -1,0 +1,2745 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Junior Secondary Science — Fill in the Blanks Study Hub</title>
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --surface: #ffffff;
+      --surface-subtle: #f8fafc;
+      --border: #dde4ee;
+      --border-strong: #cbd5e1;
+      --ink: #0f172a;
+      --ink-secondary: #334155;
+      --muted: #64748b;
+      --brand: #1d4ed8;
+      --brand-hover: #1e40af;
+      --brand-soft: #eff6ff;
+      --brand-border: #bfdbfe;
+      --accent: #0d9488;
+      --success: #059669;
+      --success-soft: #ecfdf5;
+      --success-border: #a7f3d0;
+      --danger: #dc2626;
+      --danger-soft: #fef2f2;
+      --danger-border: #fecaca;
+      --warning: #d97706;
+      --warning-soft: #fffbeb;
+      --warning-border: #fde68a;
+      --radius-sm: 8px;
+      --radius: 14px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+      --shadow: 0 4px 14px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 10px 28px rgba(15, 23, 42, 0.09);
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-8: 32px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang HK", "Microsoft JhengHei", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Mode Tabs */
+    .app-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: var(--space-4) var(--space-4) 0;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-3);
+    }
+
+    .brand-title-group {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1d4ed8, #0d9488);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      margin: 0;
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .lock-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--warning-soft);
+      border: 1px solid var(--warning-border);
+      color: #92400e;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .nav-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2);
+    }
+
+    .nav-tab {
+      appearance: none;
+      background: transparent;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 10px 8px 12px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .nav-tab:hover:not(:disabled) {
+      color: var(--brand);
+      background: var(--surface-subtle);
+    }
+
+    .nav-tab.active {
+      color: var(--brand);
+      border-bottom-color: var(--brand);
+      background: var(--brand-soft);
+    }
+
+    .nav-tab:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .nav-tab-step {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      opacity: 0.85;
+    }
+
+    .nav-tab-label {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* Main Container */
+    .main-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: var(--space-6) var(--space-4) 48px;
+    }
+
+    /* Filter & Mastery Bar */
+    .control-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-3);
+    }
+
+    .filter-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-secondary);
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .filter-pill {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface-subtle);
+      color: var(--ink-secondary);
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--brand-border);
+      color: var(--brand);
+    }
+
+    .filter-pill.active {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #ffffff;
+    }
+
+    .mastery-row {
+      margin-top: var(--space-3);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--border);
+    }
+
+    .mastery-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      margin-bottom: 6px;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .mastery-title {
+      font-weight: 700;
+      color: var(--ink-secondary);
+    }
+
+    .mastery-count {
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    .progress-track {
+      width: 100%;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #0d9488);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+
+    /* Practice & Test Card */
+    .study-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow);
+    }
+
+    .card-top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-4);
+    }
+
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #eef2ff;
+      color: #3730a3;
+      border: 1px solid #c7d2fe;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+
+    .streak-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--surface-subtle);
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+
+    .streak-badge.mastered {
+      background: var(--success-soft);
+      color: var(--success);
+      border-color: var(--success-border);
+    }
+
+    .streak-badge.retry {
+      background: var(--danger-soft);
+      color: var(--danger);
+      border-color: var(--danger-border);
+    }
+
+    /* Prompt Area */
+    .zh-prompt-box {
+      text-align: center;
+      padding: var(--space-6) var(--space-4);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: var(--space-5);
+    }
+
+    .zh-prompt-caption {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+    }
+
+    .zh-prompt-word {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--ink);
+      margin: 0 0 var(--space-2);
+      line-height: 1.25;
+    }
+
+    .hint-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: var(--space-2);
+    }
+
+    .hint-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      background: #fff7ed;
+      color: #9a3412;
+      border: 1px solid #fed7aa;
+    }
+
+    /* Sentence Prompt (Part 2 & 3) */
+    .sentence-box {
+      padding: var(--space-5);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: var(--space-5);
+    }
+
+    .subheading-chip {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: var(--space-2);
+    }
+
+    .sentence-text {
+      font-size: 20px;
+      line-height: 1.75;
+      color: var(--ink);
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .target-blank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 130px;
+      padding: 2px 14px;
+      margin: 0 4px;
+      border-radius: 8px;
+      background: var(--brand-soft);
+      border: 2px dashed var(--brand);
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 17px;
+      vertical-align: baseline;
+    }
+
+    .target-blank.filled-correct {
+      background: var(--success-soft);
+      border: 2px solid var(--success);
+      color: var(--success);
+    }
+
+    .target-blank.filled-wrong {
+      background: var(--danger-soft);
+      border: 2px solid var(--danger);
+      color: var(--danger);
+    }
+
+    .sibling-filled {
+      font-weight: 600;
+      color: var(--ink-secondary);
+      text-decoration: underline;
+      text-decoration-color: #cbd5e1;
+      text-underline-offset: 4px;
+    }
+
+    /* Spelling Input & Buttons */
+    .input-row {
+      display: flex;
+      gap: var(--space-3);
+      align-items: stretch;
+      flex-wrap: wrap;
+    }
+
+    .spell-input {
+      flex: 1 1 240px;
+      font: inherit;
+      font-size: 19px;
+      font-weight: 600;
+      padding: 13px 16px;
+      border-radius: var(--radius-sm);
+      border: 2px solid var(--border-strong);
+      color: var(--ink);
+      background: var(--surface);
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .spell-input:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.14);
+    }
+
+    .spell-input:disabled {
+      background: #f1f5f9;
+      color: var(--ink-secondary);
+    }
+
+    .word-slots-preview {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .word-slot-chip {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--brand);
+      background: var(--brand-soft);
+      border: 1px solid var(--brand-border);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    .btn {
+      appearance: none;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--brand-hover);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--ink-secondary);
+      border-color: var(--border-strong);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--surface-subtle);
+      border-color: #94a3b8;
+    }
+
+    .btn-success {
+      background: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover:not(:disabled) {
+      background: #047857;
+    }
+
+    .btn-audio {
+      padding: 8px 14px;
+      font-size: 13.5px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      color: var(--ink);
+    }
+
+    .btn-audio:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: var(--brand-soft);
+    }
+
+    /* MC Grid (Part 2) */
+    .mc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+    }
+
+    @media (max-width: 600px) {
+      .mc-grid {
+        grid-template-columns: 1fr;
+      }
+      .zh-prompt-word {
+        font-size: 26px;
+      }
+      .sentence-text {
+        font-size: 18px;
+      }
+      .study-card {
+        padding: var(--space-4);
+      }
+    }
+
+    .mc-option {
+      appearance: none;
+      width: 100%;
+      text-align: left;
+      font: inherit;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 15px 18px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transition: all 0.14s ease;
+    }
+
+    .mc-option:hover:not(:disabled) {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+    }
+
+    .mc-option:disabled {
+      cursor: default;
+    }
+
+    .mc-option.correct {
+      border-color: var(--success);
+      background: var(--success-soft);
+      color: #065f46;
+    }
+
+    .mc-option.wrong {
+      border-color: var(--danger);
+      background: var(--danger-soft);
+      color: #991b1b;
+    }
+
+    .mc-letter {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-strong);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--ink-secondary);
+      flex-shrink: 0;
+    }
+
+    .mc-option.correct .mc-letter {
+      background: var(--success);
+      border-color: var(--success);
+      color: #ffffff;
+    }
+
+    .mc-option.wrong .mc-letter {
+      background: var(--danger);
+      border-color: var(--danger);
+      color: #ffffff;
+    }
+
+    /* Phonics / Syllable Feedback Panel */
+    .feedback-panel {
+      margin-top: var(--space-5);
+      border-radius: var(--radius);
+      padding: var(--space-5);
+      border: 1px solid var(--border);
+      animation: fadeSlideIn 0.2s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .feedback-panel.is-correct {
+      background: #f0fdf4;
+      border-color: #86efac;
+    }
+
+    .feedback-panel.is-wrong {
+      background: #fef2f2;
+      border-color: #fca5a5;
+    }
+
+    .feedback-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .feedback-status {
+      font-size: 18px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .feedback-panel.is-correct .feedback-status {
+      color: #047857;
+    }
+
+    .feedback-panel.is-wrong .feedback-status {
+      color: #b91c1c;
+    }
+
+    .audio-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* Colored Syllable Breakdown Box */
+    .phonics-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .phonics-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .syllable-words-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .syllable-word-group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .syl-chunk {
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      border: 1px solid transparent;
+    }
+
+    .syl-0 { background: #dbeafe; color: #1e40af; border-color: #93c5fd; }
+    .syl-1 { background: #d1fae5; color: #065f46; border-color: #6ee7b7; }
+    .syl-2 { background: #ede9fe; color: #5b21b6; border-color: #c4b5fd; }
+    .syl-3 { background: #fef3c7; color: #92400e; border-color: #fcd34d; }
+    .syl-4 { background: #ffe4e6; color: #9f1239; border-color: #fda4af; }
+    .syl-5 { background: #cffafe; color: #155e75; border-color: #67e8f9; }
+
+    .syl-dot {
+      color: #94a3b8;
+      font-weight: 800;
+      font-size: 18px;
+      user-select: none;
+    }
+
+    .syl-hyphen {
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 22px;
+      padding: 0 2px;
+    }
+
+    .phonics-meaning-line {
+      font-size: 14.5px;
+      color: var(--ink-secondary);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border);
+    }
+
+    .next-action-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    /* Part 3: Student Entry Form & Quiz */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-5) 0;
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field-label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink-secondary);
+    }
+
+    .field-input {
+      font: inherit;
+      font-size: 15px;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink);
+    }
+
+    .field-input:focus {
+      outline: none;
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+    }
+
+    .rules-list {
+      background: var(--brand-soft);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--radius);
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-4);
+      color: #1e3a8a;
+      font-size: 14px;
+    }
+
+    .rules-list ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .rules-list li {
+      margin-bottom: 4px;
+    }
+
+    .inline-error {
+      color: var(--danger);
+      background: var(--danger-soft);
+      border: 1px solid var(--danger-border);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: var(--space-4);
+    }
+
+    /* Question Dots in Part 3 */
+    .q-dots-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: var(--space-4);
+    }
+
+    .q-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border-strong);
+      background: var(--surface);
+      color: var(--ink-secondary);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.14s ease;
+    }
+
+    .q-dot.answered {
+      background: #dbeafe;
+      border-color: #60a5fa;
+      color: #1e40af;
+    }
+
+    .q-dot.current {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18);
+    }
+
+    .test-nav-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-3);
+      margin-top: var(--space-5);
+      flex-wrap: wrap;
+    }
+
+    /* Certificate Card */
+    .certificate-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+      border: 2px solid #10b981;
+      border-radius: var(--radius-lg);
+      padding: var(--space-6);
+      box-shadow: var(--shadow-lg);
+      margin-bottom: var(--space-6);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #059669;
+      color: #ffffff;
+      font-size: 12.5px;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: var(--space-3);
+    }
+
+    .cert-title {
+      margin: 0 0 4px;
+      font-size: 24px;
+      font-weight: 800;
+      color: #064e3b;
+    }
+
+    .cert-subtitle {
+      margin: 0 0 var(--space-4);
+      font-size: 14px;
+      color: #047857;
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-3);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #a7f3d0;
+      border-radius: var(--radius);
+      padding: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+
+    .cert-item-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .cert-item-value {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--ink);
+      margin-top: 2px;
+    }
+
+    .cert-score-highlight {
+      color: #059669;
+      font-size: 22px;
+    }
+
+    .fail-banner {
+      background: var(--danger-soft);
+      border: 2px solid #f87171;
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+
+    .fail-title {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 800;
+      color: #991b1b;
+    }
+
+    .fail-desc {
+      margin: 0 0 var(--space-4);
+      font-size: 14.5px;
+      color: #7f1d1d;
+    }
+
+    /* Review List */
+    .review-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .review-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--border-strong);
+      border-radius: var(--radius);
+      padding: var(--space-4) var(--space-5);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.correct {
+      border-left-color: var(--success);
+    }
+
+    .review-item.wrong {
+      border-left-color: var(--danger);
+    }
+
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: var(--space-2);
+    }
+
+    .review-q-text {
+      font-size: 16px;
+      color: var(--ink);
+      margin: 0 0 6px;
+      line-height: 1.6;
+    }
+
+    .review-zh-text {
+      font-size: 13.5px;
+      color: var(--muted);
+      margin: 0 0 var(--space-3);
+    }
+
+    .review-ans-compare {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 14px;
+      margin-bottom: var(--space-3);
+    }
+
+    .ans-pill {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .ans-pill.student-ok {
+      background: var(--success-soft);
+      color: #065f46;
+    }
+
+    .ans-pill.student-bad {
+      background: var(--danger-soft);
+      color: #991b1b;
+    }
+
+    .ans-pill.correct-ref {
+      background: var(--brand-soft);
+      color: var(--brand);
+    }
+
+    .syl-chunk.sm {
+      font-size: 15px;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .speech-note {
+      font-size: 12px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-row">
+        <div class="brand-title-group">
+          <div class="brand-icon" aria-hidden="true">Sci</div>
+          <div>
+            <h1 class="brand-title">Junior Science Fill-in-the-Blanks Study Hub</h1>
+            <p class="brand-subtitle">Sections 2.4–2.6 (Water) &amp; Ch. 3 Looking at living things (3.1–3.2, 3.4)</p>
+          </div>
+        </div>
+        <div id="header-lock-slot"></div>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Study Mode Switcher">
+        <button type="button" class="nav-tab active" id="tab-part1" data-mode="part1">
+          <span class="nav-tab-step">Part 1</span>
+          <span class="nav-tab-label">Vocab Spelling</span>
+        </button>
+        <button type="button" class="nav-tab" id="tab-part2" data-mode="part2">
+          <span class="nav-tab-step">Part 2</span>
+          <span class="nav-tab-label">4-Choice Blanks</span>
+        </button>
+        <button type="button" class="nav-tab" id="tab-part3" data-mode="part3">
+          <span class="nav-tab-step">Part 3</span>
+          <span class="nav-tab-label">10-Question Test</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-container" id="app-root"></main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      /* =========================================================================
+       * 1. VERIFIED TEXTBOOK DATASET (Sections 2.4, 2.5, 2.6, 3.1, 3.2, 3.4)
+       *    All 24 textbook questions & 34 blanks extracted verbatim from uploads.
+       * ========================================================================= */
+      const VOCAB_MAP = {
+        "soluble": {
+          word: "soluble",
+          zh: "可溶",
+          zhDetail: "可溶（雜質）",
+          formHint: "Adjective",
+          cat: "adj",
+          words: [["sol", "u", "ble"]]
+        },
+        "insoluble": {
+          word: "insoluble",
+          zh: "不可溶",
+          zhDetail: "不可溶（雜質）",
+          formHint: "Adjective",
+          cat: "adj",
+          words: [["in", "sol", "u", "ble"]]
+        },
+        "microorganisms": {
+          word: "microorganisms",
+          zh: "微生物",
+          zhDetail: "微生物",
+          formHint: "Plural noun (-s)",
+          cat: "organism",
+          words: [["mi", "cro", "or", "gan", "isms"]]
+        },
+        "sedimentation": {
+          word: "sedimentation",
+          zh: "沉積法",
+          zhDetail: "沉積法（淨水方法）",
+          formHint: "Noun",
+          cat: "process",
+          words: [["sed", "i", "men", "ta", "tion"]]
+        },
+        "alum": {
+          word: "alum",
+          zh: "明礬",
+          zhDetail: "明礬",
+          formHint: "Noun (substance)",
+          cat: "substance",
+          words: [["al", "um"]]
+        },
+        "distillation": {
+          word: "distillation",
+          zh: "蒸餾法",
+          zhDetail: "蒸餾法（把水先煮沸再凝結）",
+          formHint: "Noun",
+          cat: "process",
+          words: [["dis", "til", "la", "tion"]]
+        },
+        "water treatment works": {
+          word: "water treatment works",
+          zh: "濾水廠",
+          zhDetail: "濾水廠",
+          formHint: "3 words",
+          cat: "place",
+          words: [["wa", "ter"], ["treat", "ment"], ["works"]]
+        },
+        "chlorine": {
+          word: "chlorine",
+          zh: "氯",
+          zhDetail: "氯（殺菌化學品）",
+          formHint: "Noun (substance)",
+          cat: "substance",
+          words: [["chlo", "rine"]]
+        },
+        "pungent": {
+          word: "pungent",
+          zh: "刺鼻",
+          zhDetail: "刺鼻（氣味）",
+          formHint: "Adjective",
+          cat: "adj",
+          words: [["pun", "gent"]]
+        },
+        "irritates": {
+          word: "irritates",
+          zh: "刺激",
+          zhDetail: "刺激（眼睛和皮膚）",
+          formHint: "Verb (3rd person singular +s)",
+          cat: "verb",
+          words: [["ir", "ri", "tates"]]
+        },
+        "ozone": {
+          word: "ozone",
+          zh: "臭氧",
+          zhDetail: "臭氧",
+          formHint: "Noun (substance)",
+          cat: "substance",
+          words: [["o", "zone"]]
+        },
+        "fluoride": {
+          word: "fluoride",
+          zh: "氟化物",
+          zhDetail: "氟化物（防止蛀牙）",
+          formHint: "Noun (substance)",
+          cat: "substance",
+          words: [["fluo", "ride"]]
+        },
+        "waste water": {
+          word: "waste water",
+          zh: "污水",
+          zhDetail: "污水（來自家居和農場）",
+          formHint: "2 words",
+          cat: "substance",
+          words: [["waste"], ["wa", "ter"]]
+        },
+        "fertilizers": {
+          word: "fertilizers",
+          zh: "肥料",
+          zhDetail: "肥料",
+          formHint: "Plural noun (-s)",
+          cat: "substance",
+          words: [["fer", "ti", "li", "zers"]]
+        },
+        "algae": {
+          word: "algae",
+          zh: "藻類",
+          zhDetail: "藻類",
+          formHint: "Plural noun",
+          cat: "organism",
+          words: [["al", "gae"]]
+        },
+        "toxic": {
+          word: "toxic",
+          zh: "有毒",
+          zhDetail: "有毒（化學品）",
+          formHint: "Adjective",
+          cat: "adj",
+          words: [["tox", "ic"]]
+        },
+        "floating": {
+          word: "floating",
+          zh: "覆蓋／漂浮",
+          zhDetail: "覆蓋／漂浮（油污在海面）",
+          formHint: "Verb (-ing form)",
+          cat: "verb",
+          words: [["float", "ing"]]
+        },
+        "air": {
+          word: "air",
+          zh: "空氣",
+          zhDetail: "空氣",
+          formHint: "Noun",
+          cat: "substance",
+          words: [["air"]]
+        },
+        "microplastics": {
+          word: "microplastics",
+          zh: "微塑膠",
+          zhDetail: "微塑膠",
+          formHint: "Plural noun (-s)",
+          cat: "substance",
+          words: [["mi", "cro", "plas", "tics"]]
+        },
+        "vital": {
+          word: "vital",
+          zh: "重要",
+          zhDetail: "重要（七項維持生命的重要功能）",
+          formHint: "Adjective",
+          cat: "adj",
+          words: [["vi", "tal"]]
+        },
+        "reproduce": {
+          word: "reproduce",
+          zh: "生殖",
+          zhDetail: "生殖（繁衍後代）",
+          formHint: "Verb (base form)",
+          cat: "verb",
+          words: [["re", "pro", "duce"]]
+        },
+        "grow": {
+          word: "grow",
+          zh: "生長",
+          zhDetail: "生長（體形增大）",
+          formHint: "Verb (base form)",
+          cat: "verb",
+          words: [["grow"]]
+        },
+        "biodiversity": {
+          word: "biodiversity",
+          zh: "生物多樣性",
+          zhDetail: "生物多樣性（生物繁多的現象）",
+          formHint: "Noun",
+          cat: "process",
+          words: [["bi", "o", "di", "ver", "si", "ty"]]
+        },
+        "backbone": {
+          word: "backbone",
+          zh: "脊柱",
+          zhDetail: "脊柱",
+          formHint: "Singular noun",
+          cat: "organ",
+          words: [["back", "bone"]]
+        },
+        "invertebrates": {
+          word: "invertebrates",
+          zh: "無脊椎動物",
+          zhDetail: "無脊椎動物",
+          formHint: "Plural noun (-s)",
+          cat: "organism",
+          words: [["in", "ver", "te", "brates"]]
+        },
+        "wings": {
+          word: "wings",
+          zh: "翅膀",
+          zhDetail: "翅膀",
+          formHint: "Plural noun (-s)",
+          cat: "organ",
+          words: [["wings"]]
+        },
+        "mammary glands": {
+          word: "mammary glands",
+          zh: "乳腺",
+          zhDetail: "乳腺（哺育幼兒）",
+          formHint: "2 words, plural (-s)",
+          cat: "organ",
+          words: [["mam", "ma", "ry"], ["glands"]]
+        },
+        "non-flowering": {
+          word: "non-flowering",
+          zh: "無花",
+          zhDetail: "無花（植物）",
+          formHint: "Contains hyphen '-' (e.g. xxx-xxx)",
+          cat: "adj",
+          hyphenated: true,
+          words: [["non"], ["flow", "er", "ing"]]
+        },
+        "cones": {
+          word: "cones",
+          zh: "毬果",
+          zhDetail: "毬果（無花植物藏種子的構造）",
+          formHint: "Plural noun (-s)",
+          cat: "organ",
+          words: [["cones"]]
+        },
+        "fruits": {
+          word: "fruits",
+          zh: "果實",
+          zhDetail: "果實（保護有花植物的種子）",
+          formHint: "Plural noun (-s)",
+          cat: "organ",
+          words: [["fruits"]]
+        },
+        "endangered species": {
+          word: "endangered species",
+          zh: "瀕危物種",
+          zhDetail: "瀕危物種（面臨滅絕危機的生物）",
+          formHint: "2 words",
+          cat: "organism",
+          words: [["en", "dan", "gered"], ["spe", "cies"]]
+        },
+        "natural habitats": {
+          word: "natural habitats",
+          zh: "自然生境",
+          zhDetail: "自然生境",
+          formHint: "2 words, plural (-s)",
+          cat: "place",
+          words: [["nat", "u", "ral"], ["hab", "i", "tats"]]
+        },
+        "foreign species": {
+          word: "foreign species",
+          zh: "外來物種",
+          zhDetail: "外來物種（從其他地區引入的物種）",
+          formHint: "2 words",
+          cat: "organism",
+          words: [["for", "eign"], ["spe", "cies"]]
+        }
+      };
+
+      const SENTENCES = [
+        // Section 2.4
+        {
+          sec: "2.4",
+          secTitle: "Section 2.4",
+          qNum: 1,
+          template: "Natural water contains impurities: {a} impurities, {b} impurities and {c}.",
+          zhSentence: "天然水含有的雜質包括：(a) 可溶雜質、(b) 不可溶雜質和 (c) 微生物。",
+          blanks: [
+            { key: "a", vocabKey: "soluble", displayAns: "soluble" },
+            { key: "b", vocabKey: "insoluble", displayAns: "insoluble" },
+            { key: "c", vocabKey: "microorganisms", displayAns: "microorganisms" }
+          ]
+        },
+        {
+          sec: "2.4",
+          secTitle: "Section 2.4",
+          qNum: 2,
+          template: "In {d}, heavy solids sink to the bottom. Adding {e} helps stick the fine suspended solids together.",
+          zhSentence: "以 (d) 沉積法把水淨化時，較重的固體沉到水底；加入 (e) 明礬更可把懸浮的細小固體吸附在一起。",
+          blanks: [
+            { key: "d", vocabKey: "sedimentation", displayAns: "sedimentation" },
+            { key: "e", vocabKey: "alum", displayAns: "alum" }
+          ]
+        },
+        {
+          sec: "2.4",
+          secTitle: "Section 2.4",
+          qNum: 3,
+          template: "Purifying water by boiling and condensation is called {f}.",
+          zhSentence: "把水先煮沸再凝結的淨水方法稱為 (f) 蒸餾法。",
+          blanks: [
+            { key: "f", vocabKey: "distillation", displayAns: "distillation" }
+          ]
+        },
+
+        // Section 2.5
+        {
+          sec: "2.5",
+          secTitle: "Section 2.5",
+          qNum: 1,
+          template: "In Hong Kong, natural water is treated in {a} before it reaches us.",
+          zhSentence: "在香港，天然水會先經 (a) 濾水廠處理，然後才供給市民使用。",
+          blanks: [
+            { key: "a", vocabKey: "water treatment works", displayAns: "water treatment works" }
+          ]
+        },
+        {
+          sec: "2.5",
+          secTitle: "Section 2.5",
+          qNum: 2,
+          template: "{b} is a toxic chemical that can be used to kill microorganisms in water. However, it may leave a {c} smell in water. Too much of it in water {d} our eyes and skin.",
+          zhSentence: "(b) 氯是有毒的化學品，加入水中可以把微生物殺死，但會在水中留下 (c) 刺鼻的氣味，含量過多更會 (d) 刺激眼睛和皮膚。",
+          blanks: [
+            { key: "b", vocabKey: "chlorine", displayAns: "Chlorine" },
+            { key: "c", vocabKey: "pungent", displayAns: "pungent" },
+            { key: "d", vocabKey: "irritates", displayAns: "irritates" }
+          ]
+        },
+        {
+          sec: "2.5",
+          secTitle: "Section 2.5",
+          qNum: 3,
+          template: "{e} is more effective than chlorine in killing microorganisms.",
+          zhSentence: "用 (e) 臭氧殺死水中的微生物比用氯效能較高。",
+          blanks: [
+            { key: "e", vocabKey: "ozone", displayAns: "Ozone" }
+          ]
+        },
+        {
+          sec: "2.5",
+          secTitle: "Section 2.5",
+          qNum: 4,
+          template: "To help prevent tooth decay, {f} is added to drinking water.",
+          zhSentence: "在食水中加入 (f) 氟化物有助防止蛀牙。",
+          blanks: [
+            { key: "f", vocabKey: "fluoride", displayAns: "fluoride" }
+          ]
+        },
+
+        // Section 2.6
+        {
+          sec: "2.6",
+          secTitle: "Section 2.6",
+          qNum: 1,
+          template: "{a} from homes and farms contain harmful microorganisms; detergents and {b} in it promote the growth of {c}.",
+          zhSentence: "來自家居和農場的 (a) 污水含有致病的微生物；當中的清潔劑和 (b) 肥料能促進 (c) 藻類的生長。",
+          blanks: [
+            { key: "a", vocabKey: "waste water", displayAns: "Waste water" },
+            { key: "b", vocabKey: "fertilizers", displayAns: "fertilizers" },
+            { key: "c", vocabKey: "algae", displayAns: "algae" }
+          ]
+        },
+        {
+          sec: "2.6",
+          secTitle: "Section 2.6",
+          qNum: 2,
+          template: "Sewage from factories may contain {d} chemicals.",
+          zhSentence: "來自工廠的污水可能含有 (d) 有毒化學品。",
+          blanks: [
+            { key: "d", vocabKey: "toxic", displayAns: "toxic" }
+          ]
+        },
+        {
+          sec: "2.6",
+          secTitle: "Section 2.6",
+          qNum: 3,
+          template: "Spilled oil {e} on surface of water blocks {f} from going into the water.",
+          zhSentence: "泄漏的油污 (e) 覆蓋海面，阻礙 (f) 空氣進入水中。",
+          blanks: [
+            { key: "e", vocabKey: "floating", displayAns: "floating" },
+            { key: "f", vocabKey: "air", displayAns: "air" }
+          ]
+        },
+        {
+          sec: "2.6",
+          secTitle: "Section 2.6",
+          qNum: 4,
+          template: "Plastics in the sea may break down into very small pieces called {g}.",
+          zhSentence: "在海洋中，塑膠廢物可能會分解成微細碎塊，形成 (g) 微塑膠。",
+          blanks: [
+            { key: "g", vocabKey: "microplastics", displayAns: "microplastics" }
+          ]
+        },
+
+        // Section 3.1
+        {
+          sec: "3.1",
+          secTitle: "Ch. 3 Looking at living things · 3.1 Living things",
+          qNum: 1,
+          template: "Scientists distinguish living things from non-living things based on whether they carry out seven {a} functions.",
+          zhSentence: "科學家分辨生物和非生物時，通常以七項 (a) 重要功能作為準則。",
+          blanks: [
+            { key: "a", vocabKey: "vital", displayAns: "vital" }
+          ]
+        },
+        {
+          sec: "3.1",
+          secTitle: "Ch. 3 Looking at living things · 3.1 Living things",
+          qNum: 2,
+          template: "All living things {b} to produce offspring.",
+          zhSentence: "所有生物都會 (b) 生殖，繁衍後代。",
+          blanks: [
+            { key: "b", vocabKey: "reproduce", displayAns: "reproduce" }
+          ]
+        },
+        {
+          sec: "3.1",
+          secTitle: "Ch. 3 Looking at living things · 3.1 Living things",
+          qNum: 3,
+          template: "All living things {c} to increase in body size and complexity.",
+          zhSentence: "所有生物都會 (c) 生長，過程中生物的體形會增大，身體結構也變得複雜。",
+          blanks: [
+            { key: "c", vocabKey: "grow", displayAns: "grow" }
+          ]
+        },
+        {
+          sec: "3.1",
+          secTitle: "Ch. 3 Looking at living things · 3.1 Living things",
+          qNum: 4,
+          template: "{d} are very small. They can only be seen under a microscope.",
+          zhSentence: "(d) 微生物的體形十分細小，要在顯微鏡下才看得見。",
+          blanks: [
+            { key: "d", vocabKey: "microorganisms", displayAns: "Microorganisms" }
+          ]
+        },
+        {
+          sec: "3.1",
+          secTitle: "Ch. 3 Looking at living things · 3.1 Living things",
+          qNum: 5,
+          template: "The wide variety of living things is called {e}.",
+          zhSentence: "生物繁多的現象稱為 (e) 生物多樣性。",
+          blanks: [
+            { key: "e", vocabKey: "biodiversity", displayAns: "biodiversity" }
+          ]
+        },
+
+        // Section 3.2
+        {
+          sec: "3.2",
+          secTitle: "Ch. 3 Looking at living things · 3.2 Grouping of living things",
+          subheading: "About animals",
+          qNum: 1,
+          template: "Animals are classified into two main groups according to whether they have a {a}.",
+          zhSentence: "科學家根據動物是否有 (a) 脊柱把動物分為兩大類。",
+          blanks: [
+            { key: "a", vocabKey: "backbone", displayAns: "backbone" }
+          ]
+        },
+        {
+          sec: "3.2",
+          secTitle: "Ch. 3 Looking at living things · 3.2 Grouping of living things",
+          subheading: "About animals",
+          qNum: 2,
+          template: "Octopuses are {b} because they do not have a backbone.",
+          zhSentence: "八爪魚是 (b) 無脊椎動物，因為牠們沒有脊柱。",
+          blanks: [
+            { key: "b", vocabKey: "invertebrates", displayAns: "invertebrates" }
+          ]
+        },
+        {
+          sec: "3.2",
+          secTitle: "Ch. 3 Looking at living things · 3.2 Grouping of living things",
+          subheading: "About animals",
+          qNum: 3,
+          template: "Like birds, bats have {c} for flying. Bats are classified as mammals because they have {d} for feeding their young.",
+          zhSentence: "蝙蝠和鳥一樣都有 (c) 翅膀用來飛行。因為蝙蝠有 (d) 乳腺來哺育幼兒，所以被歸類為哺乳動物。",
+          blanks: [
+            { key: "c", vocabKey: "wings", displayAns: "wings" },
+            { key: "d", vocabKey: "mammary glands", displayAns: "mammary glands" }
+          ]
+        },
+        {
+          sec: "3.2",
+          secTitle: "Ch. 3 Looking at living things · 3.2 Grouping of living things",
+          subheading: "About plants",
+          qNum: 4,
+          template: "{e} plants do not produce flowers. Their seeds are in {f}.",
+          zhSentence: "(e) 無花植物不開花，它們的種子藏在 (f) 毬果內。",
+          blanks: [
+            { key: "e", vocabKey: "non-flowering", displayAns: "Non-flowering" },
+            { key: "f", vocabKey: "cones", displayAns: "cones" }
+          ]
+        },
+        {
+          sec: "3.2",
+          secTitle: "Ch. 3 Looking at living things · 3.2 Grouping of living things",
+          subheading: "About plants",
+          qNum: 5,
+          template: "Pear trees are flowering plants. Their seeds are protected in {g}.",
+          zhSentence: "梨樹是有花植物，它們的種子受 (g) 果實保護。",
+          blanks: [
+            { key: "g", vocabKey: "fruits", displayAns: "fruits" }
+          ]
+        },
+
+        // Section 3.4
+        {
+          sec: "3.4",
+          secTitle: "Ch. 3 Looking at living things · Section 3.4",
+          qNum: 1,
+          template: "Living things in danger of extinction are called {a}.",
+          zhSentence: "面臨滅絕危機的生物稱為 (a) 瀕危物種。",
+          blanks: [
+            { key: "a", vocabKey: "endangered species", displayAns: "endangered species" }
+          ]
+        },
+        {
+          sec: "3.4",
+          secTitle: "Ch. 3 Looking at living things · Section 3.4",
+          qNum: 2,
+          template: "Humans destroy the {b} of many living things to obtain raw materials or new land.",
+          zhSentence: "人類為獲取原料或新土地，摧毀了很多生物的 (b) 自然生境。",
+          blanks: [
+            { key: "b", vocabKey: "natural habitats", displayAns: "natural habitats" }
+          ]
+        },
+        {
+          sec: "3.4",
+          secTitle: "Ch. 3 Looking at living things · Section 3.4",
+          qNum: 3,
+          template: "A {c} refers to the kind of living thing that is not naturally found in an area. It may be brought to a habitat through trade or by accident.",
+          zhSentence: "並非自然存在於某地區，而是經人故意（如貿易）或無意從其他地區引入的物種稱為 (c) 外來物種。",
+          blanks: [
+            { key: "c", vocabKey: "foreign species", displayAns: "foreign species" }
+          ]
+        }
+      ];
+
+      // Flatten into 34 individual blank items for Part 2 & Part 3
+      const BLANK_ITEMS = [];
+      SENTENCES.forEach(function (sent) {
+        sent.blanks.forEach(function (b) {
+          const id = sent.sec + "-Q" + sent.qNum + "-" + b.key;
+          BLANK_ITEMS.push({
+            id: id,
+            sec: sent.sec,
+            chapter: sent.sec.split(".")[0],
+            secTitle: sent.secTitle,
+            subheading: sent.subheading || "",
+            qNum: sent.qNum,
+            blankKey: b.key,
+            vocabKey: b.vocabKey,
+            displayAns: b.displayAns,
+            template: sent.template,
+            zhSentence: sent.zhSentence,
+            allBlanks: sent.blanks
+          });
+        });
+      });
+
+      // Build deduplicated vocabulary items with section membership for Part 1
+      const VOCAB_ITEMS = Object.keys(VOCAB_MAP).map(function (vKey) {
+        const secs = [];
+        BLANK_ITEMS.forEach(function (bi) {
+          if (bi.vocabKey === vKey && secs.indexOf(bi.sec) === -1) {
+            secs.push(bi.sec);
+          }
+        });
+        const chapters = secs.map(function (s) { return s.split(".")[0]; });
+        return {
+          id: "vocab-" + vKey,
+          vocabKey: vKey,
+          secs: secs,
+          chapters: chapters,
+          meta: VOCAB_MAP[vKey]
+        };
+      });
+
+      const FILTER_OPTIONS = [
+        { id: "ALL", label: "All Topics" },
+        { id: "CH2", label: "Ch. 2 Water (2.4–2.6)" },
+        { id: "CH3", label: "Ch. 3 Looking at living things (3.1–3.4)" },
+        { id: "2.4", label: "2.4" },
+        { id: "2.5", label: "2.5" },
+        { id: "2.6", label: "2.6" },
+        { id: "3.1", label: "3.1" },
+        { id: "3.2", label: "3.2" },
+        { id: "3.4", label: "3.4" }
+      ];
+
+      /* =========================================================================
+       * 2. SPEECH SYNTHESIS (Normal 1.0x & Slow 0.7x, British English preferred)
+       * ========================================================================= */
+      let cachedVoice = null;
+      const speechSupported = typeof window !== "undefined" && "speechSynthesis" in window;
+
+      function pickPreferredVoice() {
+        if (!speechSupported) return null;
+        try {
+          const voices = window.speechSynthesis.getVoices() || [];
+          if (!voices.length) return null;
+          return (
+            voices.find(function (v) { return v.lang === "en-GB" && /Google|Daniel|Martha|Arthur|Libby|Sonia/i.test(v.name); }) ||
+            voices.find(function (v) { return /^en[-_]GB/i.test(v.lang); }) ||
+            voices.find(function (v) { return /^en[-_]HK/i.test(v.lang); }) ||
+            voices.find(function (v) { return /^en[-_]US/i.test(v.lang); }) ||
+            voices.find(function (v) { return /^en/i.test(v.lang); }) ||
+            null
+          );
+        } catch (e) {
+          return null;
+        }
+      }
+
+      if (speechSupported) {
+        cachedVoice = pickPreferredVoice();
+        if (window.speechSynthesis.onvoiceschanged !== undefined) {
+          window.speechSynthesis.onvoiceschanged = function () {
+            cachedVoice = pickPreferredVoice();
+          };
+        }
+      }
+
+      function speakWord(text, isSlow) {
+        if (!speechSupported) return;
+        try {
+          window.speechSynthesis.cancel();
+          const utter = new SpeechSynthesisUtterance(text);
+          const voice = cachedVoice || pickPreferredVoice();
+          if (voice) {
+            utter.voice = voice;
+            utter.lang = voice.lang;
+          } else {
+            utter.lang = "en-GB";
+          }
+          utter.rate = isSlow ? 0.65 : 0.95;
+          utter.pitch = 1.0;
+          window.speechSynthesis.speak(utter);
+        } catch (e) {
+          // Ignore sandbox speech errors gracefully
+        }
+      }
+
+      /* =========================================================================
+       * 3. APPLICATION STATE
+       * ========================================================================= */
+      const state = {
+        mode: "part1", // "part1" | "part2" | "part3"
+        sectionFilter: "ALL",
+
+        // Mastery tracking: { [id]: { streak: 0, wrong: 0 } }
+        p1Stats: {},
+        p2Stats: {},
+
+        // Part 1 active question state
+        p1Current: null,
+        p1LastId: null,
+        p1Input: "",
+        p1Submitted: false,
+        p1IsCorrect: false,
+
+        // Part 2 active question state
+        p2Current: null,
+        p2LastId: null,
+        p2Options: [],
+        p2Selected: null,
+        p2Submitted: false,
+        p2IsCorrect: false,
+
+        // Part 3 Test state
+        p3Stage: "intro", // "intro" | "testing" | "result" | "exited"
+        studentName: "",
+        studentClass: "",
+        studentNo: "",
+        p3Error: "",
+        p3AttemptCount: 0,
+        p3Questions: [],
+        p3Answers: [],
+        p3Index: 0,
+        p3Score: 0,
+        p3Passed: false,
+        p3CompletedAt: "",
+        p3LockActive: false
+      };
+
+      /* =========================================================================
+       * 4. HELPER UTILITIES
+       * ========================================================================= */
+      function escapeHtml(str) {
+        return String(str)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function normalizeAnswer(str) {
+        return String(str || "")
+          .trim()
+          .toLowerCase()
+          .replace(/\s+/g, " ")
+          .replace(/\s*-\s*/g, "-");
+      }
+
+      function checkSpellingMatch(studentRaw, vocabKey) {
+        const cleaned = normalizeAnswer(studentRaw);
+        const target = normalizeAnswer(vocabKey);
+        if (!cleaned) return false;
+        if (cleaned === target) return true;
+        // Accept British spelling variant for fertilizers if typed by HK student
+        if (target === "fertilizers" && cleaned === "fertilisers") return true;
+        return false;
+      }
+
+      function getFilteredVocabPool() {
+        const f = state.sectionFilter;
+        if (f === "ALL") return VOCAB_ITEMS;
+        if (f === "CH2") return VOCAB_ITEMS.filter(function (v) { return v.chapters.indexOf("2") !== -1; });
+        if (f === "CH3") return VOCAB_ITEMS.filter(function (v) { return v.chapters.indexOf("3") !== -1; });
+        return VOCAB_ITEMS.filter(function (v) { return v.secs.indexOf(f) !== -1; });
+      }
+
+      function getFilteredBlankPool() {
+        const f = state.sectionFilter;
+        if (f === "ALL") return BLANK_ITEMS;
+        if (f === "CH2") return BLANK_ITEMS.filter(function (b) { return b.chapter === "2"; });
+        if (f === "CH3") return BLANK_ITEMS.filter(function (b) { return b.chapter === "3"; });
+        return BLANK_ITEMS.filter(function (b) { return b.sec === f; });
+      }
+
+      function getStat(map, id) {
+        if (!map[id]) {
+          map[id] = { streak: 0, wrong: 0 };
+        }
+        return map[id];
+      }
+
+      // Weighted adaptive picker: prioritizes wrong & unmastered items
+      function pickWeightedItem(pool, statsMap, lastId) {
+        if (!pool.length) return null;
+        const candidates = pool.length > 1
+          ? pool.filter(function (item) { return item.id !== lastId; })
+          : pool;
+
+        let totalWeight = 0;
+        const weights = candidates.map(function (item) {
+          const st = getStat(statsMap, item.id);
+          let w = 4;
+          if (st.streak >= 2) {
+            w = 1; // Mastered: low frequency review
+          } else if (st.wrong > 0 && st.streak === 0) {
+            w = 8; // Wrongly answered: high priority
+          } else if (st.streak === 1) {
+            w = 3; // Needs 1 more correct for mastery
+          }
+          totalWeight += w;
+          return w;
+        });
+
+        let r = Math.random() * totalWeight;
+        for (let i = 0; i < candidates.length; i++) {
+          r -= weights[i];
+          if (r <= 0) return candidates[i];
+        }
+        return candidates[candidates.length - 1];
+      }
+
+      function shuffleArray(arr) {
+        const copy = arr.slice();
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = copy[i];
+          copy[i] = copy[j];
+          copy[j] = tmp;
+        }
+        return copy;
+      }
+
+      // Smart distractor generator for Part 2 (same section / category prioritized)
+      function buildMcOptions(blankItem) {
+        const targetKey = blankItem.vocabKey;
+        const targetMeta = VOCAB_MAP[targetKey];
+        const allKeys = Object.keys(VOCAB_MAP).filter(function (k) { return k !== targetKey; });
+
+        const sameSecKeys = [];
+        const sameChapSameCatKeys = [];
+        const sameChapKeys = [];
+        const otherKeys = [];
+
+        allKeys.forEach(function (k) {
+          const inSameSec = BLANK_ITEMS.some(function (b) { return b.vocabKey === k && b.sec === blankItem.sec; });
+          const inSameChap = BLANK_ITEMS.some(function (b) { return b.vocabKey === k && b.chapter === blankItem.chapter; });
+          const sameCat = VOCAB_MAP[k].cat === targetMeta.cat;
+
+          if (inSameSec) {
+            sameSecKeys.push(k);
+          } else if (inSameChap && sameCat) {
+            sameChapSameCatKeys.push(k);
+          } else if (inSameChap) {
+            sameChapKeys.push(k);
+          } else {
+            otherKeys.push(k);
+          }
+        });
+
+        const orderedDistractors = []
+          .concat(shuffleArray(sameSecKeys))
+          .concat(shuffleArray(sameChapSameCatKeys))
+          .concat(shuffleArray(sameChapKeys))
+          .concat(shuffleArray(otherKeys));
+
+        const chosen = orderedDistractors.slice(0, 3);
+        return shuffleArray([targetKey].concat(chosen));
+      }
+
+      // Render colored syllable breakdown HTML
+      function renderSyllablesHtml(vocabKey, compact) {
+        const meta = VOCAB_MAP[vocabKey];
+        if (!meta) return escapeHtml(vocabKey);
+
+        let colorIdx = 0;
+        const sizeClass = compact ? " sm" : "";
+
+        if (meta.hyphenated && meta.words.length === 2) {
+          // Special rendering for hyphenated word like non-flowering
+          const part1 = meta.words[0].map(function (syl) {
+            const cls = "syl-chunk" + sizeClass + " syl-" + (colorIdx++ % 6);
+            return '<span class="' + cls + '">' + escapeHtml(syl) + '</span>';
+          }).join('<span class="syl-dot">·</span>');
+
+          const part2 = meta.words[1].map(function (syl) {
+            const cls = "syl-chunk" + sizeClass + " syl-" + (colorIdx++ % 6);
+            return '<span class="' + cls + '">' + escapeHtml(syl) + '</span>';
+          }).join('<span class="syl-dot">·</span>');
+
+          return (
+            '<div class="syllable-words-wrap">' +
+              '<span class="syllable-word-group">' +
+                part1 + '<span class="syl-hyphen">-</span>' + part2 +
+              '</span>' +
+            '</div>'
+          );
+        }
+
+        const groupsHtml = meta.words.map(function (sylArr) {
+          const chunks = sylArr.map(function (syl) {
+            const cls = "syl-chunk" + sizeClass + " syl-" + (colorIdx++ % 6);
+            return '<span class="' + cls + '">' + escapeHtml(syl) + '</span>';
+          }).join('<span class="syl-dot">·</span>');
+          return '<span class="syllable-word-group">' + chunks + '</span>';
+        }).join("");
+
+        return '<div class="syllable-words-wrap">' + groupsHtml + '</div>';
+      }
+
+      // Render sentence with highlighted target blank and filled sibling blanks
+      function renderSentenceHtml(blankItem, fillState) {
+        // fillState: { mode: "blank" | "correct" | "wrong", text: "..." }
+        let html = escapeHtml(blankItem.template);
+        blankItem.allBlanks.forEach(function (b) {
+          const token = "{" + b.key + "}";
+          if (b.key === blankItem.blankKey) {
+            let cls = "target-blank";
+            let label = "(" + b.key + ") ________";
+            if (fillState && fillState.mode === "correct") {
+              cls += " filled-correct";
+              label = "✓ " + escapeHtml(b.displayAns);
+            } else if (fillState && fillState.mode === "wrong") {
+              cls += " filled-wrong";
+              label = "✗ " + escapeHtml(fillState.text || "___") + " → " + escapeHtml(b.displayAns);
+            } else if (fillState && fillState.mode === "typed") {
+              label = fillState.text ? escapeHtml(fillState.text) : "(" + b.key + ") ________";
+            }
+            html = html.replace(token, '<span class="' + cls + '">' + label + '</span>');
+          } else {
+            html = html.replace(
+              token,
+              '<span class="sibling-filled">' + escapeHtml(b.displayAns) + '</span>'
+            );
+          }
+        });
+        return html;
+      }
+
+      function renderWordCountHintBadges(vocabKey, includeFormHint) {
+        const meta = VOCAB_MAP[vocabKey];
+        if (!meta) return "";
+        const badges = [];
+        const wordCount = meta.word.split(" ").length;
+        if (wordCount > 1) {
+          badges.push('<span class="hint-tag">Hint: ' + wordCount + ' words</span>');
+        }
+        if (meta.hyphenated) {
+          badges.push('<span class="hint-tag">Hint: Contains hyphen "-" (e.g. xxx-xxx)</span>');
+        }
+        if (includeFormHint && meta.formHint && wordCount === 1 && !meta.hyphenated) {
+          badges.push('<span class="hint-tag">Grammar: ' + escapeHtml(meta.formHint) + '</span>');
+        } else if (includeFormHint && meta.formHint && meta.formHint.toLowerCase().indexOf("plural") !== -1 && wordCount > 1) {
+          badges.push('<span class="hint-tag">Grammar: Plural (-s)</span>');
+        }
+        if (!badges.length) return "";
+        return '<div class="hint-badges">' + badges.join("") + '</div>';
+      }
+
+      function formatTimestamp(d) {
+        const pad = function (n) { return n < 10 ? "0" + n : String(n); };
+        return (
+          d.getFullYear() + "-" +
+          pad(d.getMonth() + 1) + "-" +
+          pad(d.getDate()) + " " +
+          pad(d.getHours()) + ":" +
+          pad(d.getMinutes()) + ":" +
+          pad(d.getSeconds())
+        );
+      }
+
+      /* =========================================================================
+       * 5. QUESTION FLOW CONTROLLERS
+       * ========================================================================= */
+      function nextPart1Question() {
+        const pool = getFilteredVocabPool();
+        const picked = pickWeightedItem(pool, state.p1Stats, state.p1LastId);
+        state.p1Current = picked;
+        state.p1LastId = picked ? picked.id : null;
+        state.p1Input = "";
+        state.p1Submitted = false;
+        state.p1IsCorrect = false;
+      }
+
+      function submitPart1Answer(rawInput) {
+        if (!state.p1Current || state.p1Submitted) return;
+        const ok = checkSpellingMatch(rawInput, state.p1Current.vocabKey);
+        const st = getStat(state.p1Stats, state.p1Current.id);
+        if (ok) {
+          st.streak += 1;
+        } else {
+          st.streak = 0;
+          st.wrong += 1;
+        }
+        state.p1Input = rawInput;
+        state.p1Submitted = true;
+        state.p1IsCorrect = ok;
+        render();
+        speakWord(state.p1Current.vocabKey, false);
+      }
+
+      function nextPart2Question() {
+        const pool = getFilteredBlankPool();
+        const picked = pickWeightedItem(pool, state.p2Stats, state.p2LastId);
+        state.p2Current = picked;
+        state.p2LastId = picked ? picked.id : null;
+        state.p2Options = picked ? buildMcOptions(picked) : [];
+        state.p2Selected = null;
+        state.p2Submitted = false;
+        state.p2IsCorrect = false;
+      }
+
+      function selectPart2Option(chosenVocabKey) {
+        if (!state.p2Current || state.p2Submitted) return;
+        const ok = chosenVocabKey === state.p2Current.vocabKey;
+        const st = getStat(state.p2Stats, state.p2Current.id);
+        if (ok) {
+          st.streak += 1;
+        } else {
+          st.streak = 0;
+          st.wrong += 1;
+        }
+        state.p2Selected = chosenVocabKey;
+        state.p2Submitted = true;
+        state.p2IsCorrect = ok;
+        render();
+        speakWord(state.p2Current.vocabKey, false);
+      }
+
+      function startPart3Test(isRetake) {
+        if (!isRetake) {
+          const name = state.studentName.trim();
+          const cls = state.studentClass.trim();
+          const no = state.studentNo.trim();
+          if (!name || !cls || !no) {
+            state.p3Error = "Please fill in your Student Name, Class, and Class No. before starting the test.";
+            render();
+            return;
+          }
+          state.studentName = name;
+          state.studentClass = cls;
+          state.studentNo = no;
+        }
+
+        state.p3Error = "";
+        state.p3AttemptCount += 1;
+        state.p3Questions = shuffleArray(BLANK_ITEMS).slice(0, 10);
+        state.p3Answers = state.p3Questions.map(function () { return ""; });
+        state.p3Index = 0;
+        state.p3Stage = "testing";
+        state.p3Passed = false;
+        state.p3LockActive = true;
+        render();
+      }
+
+      function gradePart3Test() {
+        // Check if any blank is empty
+        const emptyIdx = state.p3Answers.findIndex(function (a) { return !a.trim(); });
+        if (emptyIdx !== -1) {
+          state.p3Error = "Question " + (emptyIdx + 1) + " is still blank! Please complete all 10 questions before submitting.";
+          state.p3Index = emptyIdx;
+          render();
+          return;
+        }
+
+        state.p3Error = "";
+        let correctCount = 0;
+        state.p3Questions.forEach(function (q, idx) {
+          if (checkSpellingMatch(state.p3Answers[idx], q.vocabKey)) {
+            correctCount += 1;
+          }
+        });
+
+        state.p3Score = correctCount;
+        state.p3Passed = correctCount >= 8;
+        state.p3Stage = "result";
+
+        if (state.p3Passed) {
+          state.p3CompletedAt = formatTimestamp(new Date());
+          state.p3LockActive = false;
+        } else {
+          // Must retake until >= 8/10
+          state.p3LockActive = true;
+        }
+        render();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      /* =========================================================================
+       * 6. RENDER VIEWS
+       * ========================================================================= */
+      function renderControlPanel(pool, statsMap, unitLabel) {
+        const masteredCount = pool.filter(function (item) {
+          return getStat(statsMap, item.id).streak >= 2;
+        }).length;
+        const pct = pool.length ? Math.round((masteredCount / pool.length) * 100) : 0;
+
+        const pillsHtml = FILTER_OPTIONS.map(function (opt) {
+          const active = state.sectionFilter === opt.id ? " active" : "";
+          return (
+            '<button type="button" class="filter-pill' + active + '" data-filter="' + opt.id + '">' +
+              escapeHtml(opt.label) +
+            '</button>'
+          );
+        }).join("");
+
+        return (
+          '<section class="control-panel" aria-label="Topic Filter and Mastery Progress">' +
+            '<div class="filter-header">' +
+              '<span class="filter-label">📚 Select Topic Scope:</span>' +
+              '<div class="filter-pills">' + pillsHtml + '</div>' +
+            '</div>' +
+            '<div class="mastery-row">' +
+              '<div class="mastery-meta">' +
+                '<span class="mastery-title">🎯 Mastery Progress (2 correct in a row = Mastered; missed items reappear more often)</span>' +
+                '<span class="mastery-count">Mastered ' + masteredCount + ' / ' + pool.length + ' ' + unitLabel + ' (' + pct + '%)</span>' +
+              '</div>' +
+              '<div class="progress-track" role="progressbar" aria-valuenow="' + pct + '" aria-valuemin="0" aria-valuemax="100">' +
+                '<div class="progress-fill" style="width:' + pct + '%"></div>' +
+              '</div>' +
+            '</div>' +
+          '</section>'
+        );
+      }
+
+      function renderStreakBadge(st) {
+        if (st.streak >= 2) {
+          return '<span class="streak-badge mastered">✓ Mastered (Streak: ' + st.streak + ')</span>';
+        }
+        if (st.wrong > 0 && st.streak === 0) {
+          return '<span class="streak-badge retry">⚡ Priority Review (Need 2 in a row)</span>';
+        }
+        return '<span class="streak-badge">Streak: ' + st.streak + ' / 2</span>';
+      }
+
+      function renderFeedbackBlock(vocabKey, isCorrect, studentAttemptText, extraSentenceZh, nextBtnId) {
+        const meta = VOCAB_MAP[vocabKey];
+        const statusCls = isCorrect ? "is-correct" : "is-wrong";
+        const statusTitle = isCorrect
+          ? "✅ Correct! Great spelling!"
+          : "❌ Incorrect! Your answer: \"" + escapeHtml(studentAttemptText || "(blank)") + "\"";
+
+        return (
+          '<div class="feedback-panel ' + statusCls + '">' +
+            '<div class="feedback-header">' +
+              '<div class="feedback-status">' + statusTitle + '</div>' +
+              '<div class="audio-controls">' +
+                '<button type="button" class="btn btn-audio" data-speak="' + escapeHtml(vocabKey) + '" data-slow="0">🔊 Replay</button>' +
+                '<button type="button" class="btn btn-audio" data-speak="' + escapeHtml(vocabKey) + '" data-slow="1">🐢 Slow 0.7x</button>' +
+              '</div>' +
+            '</div>' +
+
+            '<div class="phonics-card">' +
+              '<div class="phonics-label">Color-Coded Syllable &amp; Phonics Breakdown</div>' +
+              renderSyllablesHtml(vocabKey, false) +
+              '<div class="phonics-meaning-line">' +
+                '<strong>Correct Spelling:</strong> ' + escapeHtml(meta.word) +
+                ' &nbsp;|&nbsp; <strong>Chinese Meaning:</strong> ' + escapeHtml(meta.zhDetail) +
+                (extraSentenceZh ? '<br><strong>Chinese Reference:</strong> ' + escapeHtml(extraSentenceZh) : '') +
+              '</div>' +
+            '</div>' +
+
+            '<div class="next-action-row">' +
+              '<button type="button" class="btn btn-primary" id="' + nextBtnId + '">Next Question ➔</button>' +
+            '</div>' +
+          '</div>'
+        );
+      }
+
+      function renderPart1() {
+        const pool = getFilteredVocabPool();
+        if (!state.p1Current || pool.indexOf(state.p1Current) === -1) {
+          nextPart1Question();
+        }
+        const item = state.p1Current;
+        if (!item) return "";
+
+        const st = getStat(state.p1Stats, item.id);
+        const hasCh3 = item.chapters.indexOf("3") !== -1;
+        const secLabel = (hasCh3 && item.chapters.length === 1 ? "Ch. 3 Looking at living things · Section " : "Section ") + item.secs.join(" / ");
+        const wordParts = item.meta.word.split(" ");
+        const wordSlotsHtml = wordParts.length > 1
+          ? '<div class="word-slots-preview">' +
+              wordParts.map(function (_, idx) {
+                return '<span class="word-slot-chip">Word ' + (idx + 1) + '</span>';
+              }).join("") +
+            '</div>'
+          : "";
+
+        return (
+          renderControlPanel(pool, state.p1Stats, "terms") +
+          '<section class="study-card">' +
+            '<div class="card-top-meta">' +
+              '<span class="section-badge">' + escapeHtml(secLabel) + '</span>' +
+              renderStreakBadge(st) +
+            '</div>' +
+
+            '<div class="zh-prompt-box">' +
+              '<div class="zh-prompt-caption">Type the correct English science term for the Chinese meaning below:</div>' +
+              '<p class="zh-prompt-word">' + escapeHtml(item.meta.zhDetail) + '</p>' +
+              renderWordCountHintBadges(item.vocabKey, true) +
+            '</div>' +
+
+            wordSlotsHtml +
+
+            '<form id="p1-form" autocomplete="off">' +
+              '<div class="input-row">' +
+                '<input type="text" id="p1-input" class="spell-input" ' +
+                  'placeholder="Type English spelling here..." ' +
+                  'value="' + escapeHtml(state.p1Input) + '" ' +
+                  (state.p1Submitted ? 'disabled ' : '') +
+                  'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="English spelling input">' +
+                (!state.p1Submitted
+                  ? '<button type="submit" class="btn btn-primary">Submit Answer</button>'
+                  : '') +
+              '</div>' +
+            '</form>' +
+
+            (state.p1Submitted
+              ? renderFeedbackBlock(item.vocabKey, state.p1IsCorrect, state.p1Input, "", "btn-p1-next")
+              : '') +
+          '</section>'
+        );
+      }
+
+      function renderPart2() {
+        const pool = getFilteredBlankPool();
+        if (!state.p2Current || pool.indexOf(state.p2Current) === -1) {
+          nextPart2Question();
+        }
+        const item = state.p2Current;
+        if (!item) return "";
+
+        const st = getStat(state.p2Stats, item.id);
+        const letters = ["A", "B", "C", "D"];
+
+        const fillState = !state.p2Submitted
+          ? { mode: "blank" }
+          : (state.p2IsCorrect
+              ? { mode: "correct" }
+              : { mode: "wrong", text: state.p2Selected });
+
+        const optionsHtml = state.p2Options.map(function (optKey, idx) {
+          let cls = "mc-option";
+          if (state.p2Submitted) {
+            if (optKey === item.vocabKey) cls += " correct";
+            else if (optKey === state.p2Selected) cls += " wrong";
+          }
+          return (
+            '<button type="button" class="' + cls + '" data-mc="' + escapeHtml(optKey) + '" ' +
+              (state.p2Submitted ? 'disabled' : '') + '>' +
+              '<span class="mc-letter">' + letters[idx] + '</span>' +
+              '<span>' + escapeHtml(optKey) + '</span>' +
+            '</button>'
+          );
+        }).join("");
+
+        return (
+          renderControlPanel(pool, state.p2Stats, "blanks") +
+          '<section class="study-card">' +
+            '<div class="card-top-meta">' +
+              '<span class="section-badge">' + escapeHtml(item.secTitle) + ' · Q' + item.qNum + ' (' + item.blankKey + ')</span>' +
+              renderStreakBadge(st) +
+            '</div>' +
+
+            '<div class="sentence-box">' +
+              (item.subheading ? '<div class="subheading-chip">' + escapeHtml(item.subheading) + '</div>' : '') +
+              '<p class="sentence-text">' + renderSentenceHtml(item, fillState) + '</p>' +
+            '</div>' +
+
+            '<div class="mc-grid" role="group" aria-label="4-Choice Vocabulary Options">' +
+              optionsHtml +
+            '</div>' +
+
+            (state.p2Submitted
+              ? renderFeedbackBlock(item.vocabKey, state.p2IsCorrect, state.p2Selected, item.zhSentence, "btn-p2-next")
+              : '') +
+          '</section>'
+        );
+      }
+
+      function renderPart3Intro() {
+        return (
+          '<section class="study-card">' +
+            '<div class="card-top-meta">' +
+              '<span class="section-badge">🏆 Part 3 · 10-Question Challenge Test</span>' +
+              '<span class="streak-badge mastered">Pass Requirement: 8 / 10 or above</span>' +
+            '</div>' +
+
+            '<h2 style="margin:0 0 8px; font-size:22px;">Ready for the Fill-in-the-Blanks Test?</h2>' +
+            '<p style="margin:0 0 16px; color:var(--ink-secondary); font-size:15px;">10 fill-in-the-blank questions will be randomly drawn from Sections 2.4–2.6 (Water) and Ch. 3 Looking at living things (3.1–3.2, 3.4). Type the exact English answers to pass.</p>' +
+
+            '<div class="rules-list">' +
+              '<strong>📋 Test Rules:</strong>' +
+              '<ul>' +
+                '<li><strong>10 textbook fill-in-the-blank questions</strong> are randomly drawn each attempt. Answers are case-insensitive, but spelling must be accurate.</li>' +
+                '<li>Multi-word or hyphenated terms include helpful hints (e.g. <code>2 words</code>) so you know how many words to type.</li>' +
+                '<li>After submitting, you will see all 10 questions, your answers, the correct answers, and color-coded phonics breakdowns for review.</li>' +
+                '<li><strong>Score 8 / 10 or above to pass and unlock exit</strong> (with a Pass Certificate Card for screenshot submission). If you score below 8, you must retake a new 10-question set until you pass!</li>' +
+              '</ul>' +
+            '</div>' +
+
+            (state.p3Error ? '<div class="inline-error">' + escapeHtml(state.p3Error) + '</div>' : '') +
+
+            '<form id="p3-intro-form" autocomplete="off">' +
+              '<div class="form-grid">' +
+                '<div class="field-group">' +
+                  '<label class="field-label" for="stu-name">Student Name</label>' +
+                  '<input class="field-input" id="stu-name" type="text" placeholder="e.g. Chan Tai Man" value="' + escapeHtml(state.studentName) + '">' +
+                '</div>' +
+                '<div class="field-group">' +
+                  '<label class="field-label" for="stu-class">Class</label>' +
+                  '<input class="field-input" id="stu-class" type="text" placeholder="e.g. 1A" value="' + escapeHtml(state.studentClass) + '">' +
+                '</div>' +
+                '<div class="field-group">' +
+                  '<label class="field-label" for="stu-no">Class No.</label>' +
+                  '<input class="field-input" id="stu-no" type="text" placeholder="e.g. 12" value="' + escapeHtml(state.studentNo) + '">' +
+                '</div>' +
+              '</div>' +
+              '<button type="submit" class="btn btn-primary" style="width:100%; font-size:16px; padding:14px;">🚀 Start 10-Question Challenge Test</button>' +
+            '</form>' +
+          '</section>'
+        );
+      }
+
+      function renderPart3Testing() {
+        const q = state.p3Questions[state.p3Index];
+        const currentAns = state.p3Answers[state.p3Index] || "";
+        const answeredCount = state.p3Answers.filter(function (a) { return a.trim().length > 0; }).length;
+
+        const dotsHtml = state.p3Questions.map(function (_, idx) {
+          let cls = "q-dot";
+          if (idx === state.p3Index) cls += " current";
+          else if (state.p3Answers[idx] && state.p3Answers[idx].trim()) cls += " answered";
+          return '<button type="button" class="' + cls + '" data-qidx="' + idx + '">' + (idx + 1) + '</button>';
+        }).join("");
+
+        return (
+          '<section class="study-card">' +
+            '<div class="card-top-meta">' +
+              '<span class="section-badge">Question ' + (state.p3Index + 1) + ' / 10 · ' + escapeHtml(q.secTitle) + '</span>' +
+              '<span class="streak-badge">Attempt #' + state.p3AttemptCount + ' &nbsp;|&nbsp; Answered ' + answeredCount + ' / 10</span>' +
+            '</div>' +
+
+            '<div class="q-dots-bar" aria-label="Question Navigator">' + dotsHtml + '</div>' +
+
+            (state.p3Error ? '<div class="inline-error">' + escapeHtml(state.p3Error) + '</div>' : '') +
+
+            '<div class="sentence-box">' +
+              (q.subheading ? '<div class="subheading-chip">' + escapeHtml(q.subheading) + '</div>' : '') +
+              '<p class="sentence-text">' + renderSentenceHtml(q, { mode: "typed", text: currentAns }) + '</p>' +
+              renderWordCountHintBadges(q.vocabKey, false) +
+            '</div>' +
+
+            '<form id="p3-q-form" autocomplete="off">' +
+              '<div class="input-row">' +
+                '<input type="text" id="p3-ans-input" class="spell-input" ' +
+                  'placeholder="Type the English answer for blank (' + escapeHtml(q.blankKey) + ')..." ' +
+                  'value="' + escapeHtml(currentAns) + '" ' +
+                  'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-label="Test answer input">' +
+              '</div>' +
+
+              '<div class="test-nav-footer">' +
+                '<button type="button" class="btn btn-secondary" id="btn-p3-prev" ' +
+                  (state.p3Index === 0 ? 'disabled' : '') + '>← Previous</button>' +
+
+                '<div style="display:flex; gap:10px; flex-wrap:wrap;">' +
+                  (state.p3Index < 9
+                    ? '<button type="submit" class="btn btn-primary">Next →</button>'
+                    : '<button type="submit" class="btn btn-success" id="btn-p3-submit">✓ Submit All 10 Answers</button>') +
+                '</div>' +
+              '</div>' +
+            '</form>' +
+          '</section>'
+        );
+      }
+
+      function renderPart3Result() {
+        const reviewItemsHtml = state.p3Questions.map(function (q, idx) {
+          const stuAns = state.p3Answers[idx];
+          const ok = checkSpellingMatch(stuAns, q.vocabKey);
+          const fillState = ok ? { mode: "correct" } : { mode: "wrong", text: stuAns };
+
+          return (
+            '<div class="review-item ' + (ok ? 'correct' : 'wrong') + '">' +
+              '<div class="review-top">' +
+                '<span class="section-badge">Q' + (idx + 1) + ' · ' + escapeHtml(q.secTitle) + '</span>' +
+                '<div class="audio-controls">' +
+                  '<button type="button" class="btn btn-audio" data-speak="' + escapeHtml(q.vocabKey) + '" data-slow="0">🔊 Pronounce</button>' +
+                  '<button type="button" class="btn btn-audio" data-speak="' + escapeHtml(q.vocabKey) + '" data-slow="1">🐢 Slow 0.7x</button>' +
+                '</div>' +
+              '</div>' +
+
+              '<p class="review-q-text">' + renderSentenceHtml(q, fillState) + '</p>' +
+              '<p class="review-zh-text">Chinese Reference: ' + escapeHtml(q.zhSentence) + '</p>' +
+
+              '<div class="review-ans-compare">' +
+                '<span class="ans-pill ' + (ok ? 'student-ok' : 'student-bad') + '">' +
+                  (ok ? '✓ Your Answer: ' : '✗ Your Answer: ') + escapeHtml(stuAns) +
+                '</span>' +
+                (!ok
+                  ? '<span class="ans-pill correct-ref">Correct Answer: ' + escapeHtml(q.displayAns) + ' (' + escapeHtml(VOCAB_MAP[q.vocabKey].zh) + ')</span>'
+                  : '') +
+              '</div>' +
+
+              renderSyllablesHtml(q.vocabKey, true) +
+            '</div>'
+          );
+        }).join("");
+
+        const topOutcomeHtml = state.p3Passed
+          ? (
+            '<div class="certificate-card">' +
+              '<div class="cert-ribbon">PASSED · Completion Certificate</div>' +
+              '<h2 class="cert-title">🎉 Congratulations! You Passed (8/10 or above)</h2>' +
+              '<p class="cert-subtitle">Take a screenshot of this Pass Certificate Card to submit to your teacher. You may now finish and exit the test.</p>' +
+              '<div class="cert-grid">' +
+                '<div><div class="cert-item-label">Student Name</div><div class="cert-item-value">' + escapeHtml(state.studentName) + '</div></div>' +
+                '<div><div class="cert-item-label">Class &amp; No.</div><div class="cert-item-value">' + escapeHtml(state.studentClass) + ' (' + escapeHtml(state.studentNo) + ')</div></div>' +
+                '<div><div class="cert-item-label">Final Score</div><div class="cert-item-value cert-score-highlight">' + state.p3Score + ' / 10 (' + (state.p3Score * 10) + '%)</div></div>' +
+                '<div><div class="cert-item-label">Attempts Taken</div><div class="cert-item-value">Attempt #' + state.p3AttemptCount + '</div></div>' +
+                '<div><div class="cert-item-label">Completed At</div><div class="cert-item-value" style="font-size:14px;">' + escapeHtml(state.p3CompletedAt) + '</div></div>' +
+              '</div>' +
+              '<div style="display:flex; gap:12px; flex-wrap:wrap;">' +
+                '<button type="button" class="btn btn-success" id="btn-p3-exit">✅ Finish &amp; Exit Test</button>' +
+                '<button type="button" class="btn btn-secondary" id="btn-p3-retake">🔄 Try Again for 10/10</button>' +
+              '</div>' +
+            '</div>'
+          )
+          : (
+            '<div class="fail-banner">' +
+              '<h2 class="fail-title">⚠️ Score: ' + state.p3Score + ' / 10 — Below Passing Mark (8/10 Required to Exit)</h2>' +
+              '<p class="fail-desc">You need at least <strong>8 out of 10</strong> correct answers to pass and leave. Review all 10 questions and their color-coded syllable breakdowns below, then click <strong>Retake Test</strong> to try a new set of 10 questions!</p>' +
+              '<button type="button" class="btn btn-primary" id="btn-p3-retake">🔄 Retake Test (Start Attempt #' + (state.p3AttemptCount + 1) + ')</button>' +
+            '</div>'
+          );
+
+        return (
+          topOutcomeHtml +
+          '<section class="study-card">' +
+            '<h3 style="margin:0 0 16px; font-size:18px;">📖 Full Review of All 10 Questions &amp; Answers</h3>' +
+            '<div class="review-list">' + reviewItemsHtml + '</div>' +
+          '</section>'
+        );
+      }
+
+      function renderPart3Exited() {
+        return (
+          '<section class="study-card" style="text-align:center; padding:40px 24px;">' +
+            '<div style="font-size:48px; margin-bottom:12px;">🎓</div>' +
+            '<h2 style="margin:0 0 8px; font-size:24px; color:#065f46;">Study Session Completed!</h2>' +
+            '<p style="margin:0 auto 24px; max-width:520px; color:var(--ink-secondary);">' +
+              escapeHtml(state.studentName) + ' (Class ' + escapeHtml(state.studentClass) + ', No. ' + escapeHtml(state.studentNo) + ') passed the challenge test with a score of <strong>' +
+              state.p3Score + ' / 10</strong>. You may now close this page or return to Parts 1 &amp; 2 for extra practice.' +
+            '</p>' +
+            '<div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">' +
+              '<button type="button" class="btn btn-secondary" id="btn-back-cert">View Certificate &amp; Review</button>' +
+              '<button type="button" class="btn btn-primary" id="btn-back-part1">Back to Part 1 Practice</button>' +
+            '</div>' +
+          '</section>'
+        );
+      }
+
+      function renderPart3() {
+        if (state.p3Stage === "testing") return renderPart3Testing();
+        if (state.p3Stage === "result") return renderPart3Result();
+        if (state.p3Stage === "exited") return renderPart3Exited();
+        return renderPart3Intro();
+      }
+
+      /* =========================================================================
+       * 7. MAIN RENDER & EVENT BINDING
+       * ========================================================================= */
+      function render() {
+        // Update top tabs & lock indicator
+        const tabs = [
+          { el: document.getElementById("tab-part1"), mode: "part1" },
+          { el: document.getElementById("tab-part2"), mode: "part2" },
+          { el: document.getElementById("tab-part3"), mode: "part3" }
+        ];
+        tabs.forEach(function (t) {
+          t.el.classList.toggle("active", state.mode === t.mode);
+          t.el.disabled = state.p3LockActive && t.mode !== "part3";
+        });
+
+        const lockSlot = document.getElementById("header-lock-slot");
+        lockSlot.innerHTML = state.p3LockActive
+          ? '<span class="lock-pill">🔒 Challenge Test Active (Score 8/10 required to exit)</span>'
+          : '';
+
+        const root = document.getElementById("app-root");
+        let contentHtml = "";
+        if (state.mode === "part1") contentHtml = renderPart1();
+        else if (state.mode === "part2") contentHtml = renderPart2();
+        else contentHtml = renderPart3();
+
+        if (!speechSupported) {
+          contentHtml += '<p class="speech-note">Note: Audio pronunciation is not supported in this browser, but color-coded syllable breakdowns remain fully available.</p>';
+        }
+
+        root.innerHTML = contentHtml;
+        bindDynamicEvents();
+      }
+
+      function bindDynamicEvents() {
+        const root = document.getElementById("app-root");
+
+        // Filter pills
+        root.querySelectorAll("[data-filter]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            state.sectionFilter = btn.getAttribute("data-filter");
+            if (state.mode === "part1") nextPart1Question();
+            if (state.mode === "part2") nextPart2Question();
+            render();
+          });
+        });
+
+        // Audio buttons
+        root.querySelectorAll("[data-speak]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            const word = btn.getAttribute("data-speak");
+            const slow = btn.getAttribute("data-slow") === "1";
+            speakWord(word, slow);
+          });
+        });
+
+        // Part 1 form & next
+        const p1Form = document.getElementById("p1-form");
+        const p1Input = document.getElementById("p1-input");
+        if (p1Input && !state.p1Submitted) {
+          p1Input.focus();
+          p1Input.addEventListener("input", function () {
+            state.p1Input = p1Input.value;
+          });
+        }
+        if (p1Form) {
+          p1Form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (!state.p1Submitted && p1Input) {
+              submitPart1Answer(p1Input.value);
+            }
+          });
+        }
+        const btnP1Next = document.getElementById("btn-p1-next");
+        if (btnP1Next) {
+          btnP1Next.focus();
+          btnP1Next.addEventListener("click", function () {
+            nextPart1Question();
+            render();
+          });
+        }
+
+        // Part 2 MC options & next
+        root.querySelectorAll("[data-mc]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            selectPart2Option(btn.getAttribute("data-mc"));
+          });
+        });
+        const btnP2Next = document.getElementById("btn-p2-next");
+        if (btnP2Next) {
+          btnP2Next.focus();
+          btnP2Next.addEventListener("click", function () {
+            nextPart2Question();
+            render();
+          });
+        }
+
+        // Part 3 Intro
+        const p3IntroForm = document.getElementById("p3-intro-form");
+        if (p3IntroForm) {
+          p3IntroForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            state.studentName = document.getElementById("stu-name").value;
+            state.studentClass = document.getElementById("stu-class").value;
+            state.studentNo = document.getElementById("stu-no").value;
+            startPart3Test(false);
+          });
+        }
+
+        // Part 3 Testing
+        const p3AnsInput = document.getElementById("p3-ans-input");
+        if (p3AnsInput) {
+          p3AnsInput.focus();
+          p3AnsInput.addEventListener("input", function () {
+            state.p3Answers[state.p3Index] = p3AnsInput.value;
+          });
+        }
+
+        root.querySelectorAll("[data-qidx]").forEach(function (dot) {
+          dot.addEventListener("click", function () {
+            if (p3AnsInput) state.p3Answers[state.p3Index] = p3AnsInput.value;
+            state.p3Error = "";
+            state.p3Index = parseInt(dot.getAttribute("data-qidx"), 10);
+            render();
+          });
+        });
+
+        const btnP3Prev = document.getElementById("btn-p3-prev");
+        if (btnP3Prev) {
+          btnP3Prev.addEventListener("click", function () {
+            if (p3AnsInput) state.p3Answers[state.p3Index] = p3AnsInput.value;
+            if (state.p3Index > 0) {
+              state.p3Error = "";
+              state.p3Index -= 1;
+              render();
+            }
+          });
+        }
+
+        const p3QForm = document.getElementById("p3-q-form");
+        if (p3QForm) {
+          p3QForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            if (p3AnsInput) state.p3Answers[state.p3Index] = p3AnsInput.value;
+            state.p3Error = "";
+            if (state.p3Index < 9) {
+              state.p3Index += 1;
+              render();
+            } else {
+              gradePart3Test();
+            }
+          });
+        }
+
+        // Part 3 Result & Exit actions
+        const btnP3Retake = document.getElementById("btn-p3-retake");
+        if (btnP3Retake) {
+          btnP3Retake.addEventListener("click", function () {
+            startPart3Test(true);
+          });
+        }
+
+        const btnP3Exit = document.getElementById("btn-p3-exit");
+        if (btnP3Exit) {
+          btnP3Exit.addEventListener("click", function () {
+            state.p3Stage = "exited";
+            render();
+          });
+        }
+
+        const btnBackCert = document.getElementById("btn-back-cert");
+        if (btnBackCert) {
+          btnBackCert.addEventListener("click", function () {
+            state.p3Stage = "result";
+            render();
+          });
+        }
+
+        const btnBackPart1 = document.getElementById("btn-back-part1");
+        if (btnBackPart1) {
+          btnBackPart1.addEventListener("click", function () {
+            state.mode = "part1";
+            render();
+          });
+        }
+      }
+
+      // Header tab clicks
+      document.querySelectorAll(".nav-tab").forEach(function (tab) {
+        tab.addEventListener("click", function () {
+          if (state.p3LockActive) return;
+          const targetMode = tab.getAttribute("data-mode");
+          state.mode = targetMode;
+          render();
+        });
+      });
+
+      // Initialize first questions and render
+      nextPart1Question();
+      nextPart2Question();
+      render();
+    })();
+  </script>
+</body>
+</html>
